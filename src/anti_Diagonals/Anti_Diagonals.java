@@ -12,21 +12,21 @@ public class Anti_Diagonals {
 	
 	private static void print_diagonally(int[][] array,int row,int column) {
 		
-		HashMap<Integer,ArrayList> map=new HashMap<>();		// uses extra space but simpler to understand
+		HashMap<Integer,ArrayList> map=new HashMap<>();			// uses extra space but simpler to understand
 		for(int i=0;i<row;i++)
 		{
 			for(int j=0;j<column;j++)
 			{
-				if(map.containsKey(i+j))					// If the sum exists
+				if(map.containsKey(i+j))			// If the sum exists
 				{
-					ArrayList list=map.get(i+j);			// adds the element to the existing arraylist
+					ArrayList list=map.get(i+j);		// adds the element to the existing arraylist
 					list.add(array[i][j]);
 					map.put(i+j, list);
 				}
 				else
 				{
 					ArrayList<Integer> temp=new ArrayList<>();
-					temp.add(array[i][j]);							// adding new arraylist if row+column sum is not present
+					temp.add(array[i][j]);			// adding new arraylist if row+column sum is not present
 					map.put(i+j,temp);
 				}
 			}
